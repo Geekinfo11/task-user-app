@@ -2,7 +2,9 @@ const { send } = require('@sendgrid/mail')
 const nodemailer = require('nodemailer')
 
 const transporter = nodemailer.createTransport({
-    service:'gmail',
+    host:'smtp.gmail.com',
+    port:587,
+    secure:false,
     auth:{
         user: process.env.EMAIL, // i could have put email here in plain text, but for security reasons i installed the dotenv npm package
         // and created .env file to put email and password there, now there are global variables 
